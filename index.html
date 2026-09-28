@@ -247,7 +247,7 @@ function isAdm(){return !!me&&(me.main||D.admins.some(function(a){return a.id===
 function find(q){var k=keyOf(q),t=D.accts.filter(function(x){return x.num===q||x.id===k})[0];if(!t&&(k===MAIN.key||q===MAIN.num))t={id:MAIN.key,name:'Lexus2026'};return t}
 
 function render(){
-  $('st').innerHTML='<div class="stat"><b>'+D.members.filter(function(m){return m.status==='aktif'}).length+'</b>Member aktif</div><div class="stat"><b>'+(D.cfg.projects||0)+'</b>Project</div><div class="stat"><b>2026</b>Tahun berdiri</div>';
+  $('st').innerHTML='<div class="stat"><b>'+D.members.filter(function(m){return m.status==='aktif'}).length+'</b>Member aktif</div><div class="stat"><b>'+(D.cfg.projects||0)+'</b>Project</div><div class="stat"><b>2025</b>Tahun berdiri</div>';
   $('ml').innerHTML=D.members.map(function(m){return '<li><div><b>'+esc(m.name)+'</b><div class="role">Role: '+esc(m.role)+'</div></div><span class="tag'+(m.status==='aktif'?'':' off')+'">Status: '+esc(m.status)+'</span></li>'}).join('')||'<li class="mute">Belum ada member.</li>';
   $('gal').innerHTML=D.photos.length?D.photos.map(function(p){return '<img alt="Foto team Lexus" src="'+at(p.src)+'">'}).join(''):[1,2,3,4,5,6].map(function(i){return '<div class="ph">Foto '+i+'</div>'}).join('');
   document.body.classList.toggle('locked',!me);
